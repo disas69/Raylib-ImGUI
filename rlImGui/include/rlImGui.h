@@ -74,7 +74,7 @@ extern "C" {
 /// Calls ImGui_ImplRaylib_Init and sets the theme. Will install Font awesome by default
 /// </summary>
 /// <param name="darkTheme">when true(default) the dark theme is used, when false the light theme is used</param>
-RLIMGUIAPI void rlImGuiSetup(bool darkTheme);
+RLIMGUIAPI void rlImGuiSetup();
 
 /// <summary>
 /// Starts a new ImGui Frame

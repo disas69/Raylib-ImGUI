@@ -492,14 +492,11 @@ void rlImGuiBeginInitImGui(void)
     io.Fonts->AddFontDefault(&defaultConfig);
 }
 
-void rlImGuiSetup(bool dark)
+void rlImGuiSetup()
 {
     rlImGuiBeginInitImGui();
 
-    if (dark)
-        ImGui::StyleColorsDark();
-    else
-        ImGui::StyleColorsLight();
+    ImGui::StyleColorsDark();
 
     rlImGuiEndInitImGui();
 }
