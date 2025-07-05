@@ -29,8 +29,12 @@ include_directories(${RAYLIB_PATH}/include include)
 set(RL_IMGUI_PATH ${PROJECT_SOURCE_DIR}/rlImGui)
 include_directories(${RL_IMGUI_PATH}/include include)
 
+set(TINY_FD_PATH ${PROJECT_SOURCE_DIR}/tinyfiledialogs)
+include_directories(${TINY_FD_PATH}/include)
+
 add_executable(${PROJECT_NAME} src/main.cpp
         ${RL_IMGUI_PATH}/src/rlImGui.cpp
+        ${TINY_FD_PATH}/src/tinyfiledialogs.c
 )
 
 if (WIN32)
