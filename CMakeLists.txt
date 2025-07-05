@@ -32,9 +32,13 @@ include_directories(${RL_IMGUI_PATH}/include include)
 set(TINY_FD_PATH ${PROJECT_SOURCE_DIR}/tinyfiledialogs)
 include_directories(${TINY_FD_PATH}/include)
 
+include_directories(${PROJECT_SOURCE_DIR}/include)
+
 add_executable(${PROJECT_NAME} src/main.cpp
         ${RL_IMGUI_PATH}/src/rlImGui.cpp
         ${TINY_FD_PATH}/src/tinyfiledialogs.c
+        ${PROJECT_SOURCE_DIR}/src/EditorView.cpp
+        ${PROJECT_SOURCE_DIR}/src/SceneView.cpp
 )
 
 if (WIN32)
