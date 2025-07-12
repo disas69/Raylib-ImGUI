@@ -66,6 +66,24 @@ elseif (APPLE)
             "-framework OpenGL"
             imgui
     )
+elseif (UNIX)
+    link_directories(${RAYLIB_PATH}/lib/linux)
+    target_link_libraries(${PROJECT_NAME} ${RAYLIB_PATH}/lib/linux/libraylib.a)
+
+    find_package(OpenGL REQUIRED)
+    find_package(PkgConfig REQUIRED)
+    pkg_check_modules(GLFW REQUIRED glfw3)
+
+    target_include_directories(${PROJECT_NAME} PRIVATE ${GLFW_INCLUDE_DIRS})
+    target_link_libraries(${PROJECT_NAME}
+            ${OPENGL_gl_LIBRARY}
+            ${GLFW_LIBRARIES}
+            pthread
+            m
+            dl
+            X11
+            imgui
+    )
 endif ()
 
 add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
